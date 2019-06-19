@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5913869199331219606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4841997057416579504}
+  - component: {fileID: 3664514703333265424}
+  - component: {fileID: 6689415640589915894}
+  m_Layer: 0
+  m_Name: ModulatedMaze
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4841997057416579504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913869199331219606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 96.73272, y: 106.696785, z: 161.03125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3664514703333265424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913869199331219606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 230c8087ae1431547a039fc8f902f7b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  displayMazeDebug: 0
+  mazeGroundMat: {fileID: 2100000, guid: 30c8a332944186641b4c9ce8fe2fe168, type: 2}
+  mazeWallMat: {fileID: 2100000, guid: 2063f2acbbbdab94ba166bd09d962c89, type: 2}
+  reachedTriggerMat: {fileID: 2100000, guid: 73cadd559baeafe42bfa4a229795fa6d, type: 2}
+  grid: {fileID: 0}
+  ZoneSize: 8
+  cellPrefab: {fileID: 3405880432699733979, guid: 76714148be879944a8d69762dcab4db8,
+    type: 3}
+  passagePrefab: {fileID: 7665437928817650285, guid: f80a33ba97b3ffc44bc0b7e0f9341828,
+    type: 3}
+  wallPrefab: {fileID: 8519915565531090118, guid: a0e98786a9cc6dd4695abdf2aee44964,
+    type: 3}
+--- !u!114 &6689415640589915894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913869199331219606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21eb31c8d9b81dc4ab4ba89df1187bab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomDoors: 0
+  getToDestination: 0
+  isCurrent: 0
+  gridCols: 20
+  gridRows: 20

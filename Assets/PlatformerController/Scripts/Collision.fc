@@ -1,0 +1,25 @@
+//
+Collision [Crossroad c];
+Move;
+UpdateRaycastOrigin;
+
+branch(cross_Vertcollision)[Crossroads vcollision]{
+  raycast(dir, raylength, rayorigin);
+  if (hit){
+     set velocity to the length between curPos intersected with the collider;
+     //set the min distance avoiding the uneven shape
+     set raylength to the min length; 
+  }
+}
+branch(cross_Horicollision)[Crossroads hcollision]{
+  raycast(dir, raylength, rayorigin);
+  if (hit){
+     set velocity to the length between curPos intersected with the collider;
+     
+     set raylength to the min length; 
+  }
+}
+
+
+join(cross_Vertcollision, cross_Horicollision);
+end;
