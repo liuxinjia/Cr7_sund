@@ -55,6 +55,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\Maze.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeCell.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeCellEdge.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeDirection.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeDoor.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazePassage.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeRoom.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeRoomSettings.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeWalker.cs" />
+     <Compile Include="Assets\Demo\Mazegenerator\Scripts\MazeWall.cs" />
+     <Compile Include="Assets\Demo\SplatPainting\Scripts\EmitterBall.cs" />
+     <Compile Include="Assets\Demo\SplatPainting\Scripts\MouseShooter.cs" />
+     <Compile Include="Assets\Demo\SplatPainting\Scripts\Shaker.cs" />
+     <Compile Include="Assets\Demo\SplatPainting\Scripts\SplatPainting.cs" />
+     <Compile Include="Assets\Demo\SplatPainting\Scripts\Target.cs" />
+     <Compile Include="Assets\ForceModeExample.cs" />
+     <Compile Include="Assets\HitBallEmitter.cs" />
      <Compile Include="Assets\PlatformerController\Scripts\Controller2D.cs" />
      <Compile Include="Assets\PlatformerController\Scripts\Controller2D_CC.cs" />
      <Compile Include="Assets\PlatformerController\Scripts\Controller2D_Rigi.cs" />
@@ -74,6 +92,7 @@
      <Compile Include="Assets\WorldBuilder\LevelGenerator\RoomManager\Scripts\RoomInstance.cs" />
      <Compile Include="Assets\WorldBuilder\LevelGenerator\RoomManager\Scripts\RoomNode.cs" />
      <Compile Include="Assets\WorldBuilder\LevelGenerator\RoomManager\Scripts\RoomPathManager.cs" />
+     <Compile Include="Assets\WorldBuilder\LevelManager.cs" />
      <Compile Include="Assets\WorldBuilder\MagicNumbers.cs" />
      <Compile Include="Assets\WorldBuilder\MeshChanger.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\APathfindingEdge.cs" />
@@ -81,6 +100,7 @@
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazeCellEdge.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazeCellNode.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazeData.cs" />
+     <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazeDoor.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazePassage.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MazeWall.cs" />
      <Compile Include="Assets\WorldBuilder\ModulatedMaze\Scripts\MMazeGrid.cs" />
@@ -95,28 +115,30 @@
      <Compile Include="Assets\WorldBuilder\ProceduralMaze\Scripts\MazeMeshGenerator.cs" />
      <Compile Include="Assets\WorldBuilder\ProceduralMaze\Scripts\PMRoomInstance.cs" />
      <Compile Include="Assets\WorldBuilder\ProceduralMaze\Scripts\ProceduralMazeConstructor.cs" />
+     <Compile Include="Assets\WorldBuilder\Singleton.cs" />
      <Compile Include="Assets\WorldBuilder\Tags.cs" />
      <Compile Include="Assets\WorldBuilder\TriggerEventRouter.cs" />
+     <None Include="Assets\Demo\SplatPainting\Splat.shader" />
  <Reference Include="Unity.Timeline.Editor">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Timeline">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.DataPrivacy">
- <HintPath>G:/I Can Love/Dragonite/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>C:/Program Files/2019.1.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -302,13 +324,13 @@
  <HintPath>C:/Program Files/2019.1.3f1/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Editor">
- <HintPath>G:/I Can Love/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.StandardEvents">
- <HintPath>G:/I Can Love/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Analytics.Tracker">
- <HintPath>G:/I Can Love/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+ <HintPath>G:/ICanLove/Dragonite/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>C:/Program Files/2019.1.3f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

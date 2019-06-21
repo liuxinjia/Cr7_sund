@@ -20,7 +20,7 @@ namespace Cr7_Level
         public int rMax, cMax;
 
         //generate room map sprite
-        public Transform mapRoot;
+        Transform mapRoot;
         public GameObject roomMapSprit;
 
         public float gridSizeX, gridSizeY;
@@ -56,7 +56,7 @@ namespace Cr7_Level
             // _roomPathManger = new RoomPathManager();
             _roomDataGenerator = GetComponent<RoomDataGenerator>();
             _roomPathManger = GetComponent<RoomPathManager>();
-
+            mapRoot = GameObject.FindGameObjectWithTag(Tags.MapRoot).transform;
             //note: these are half-extents
             rMax = 4;
             cMax = 4;

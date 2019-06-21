@@ -8,6 +8,9 @@ TagManager:
   - Generated
   - PlayableZone
   - PathFinder
+  - MapRoot
+  - Shaker
+  - FlowCamera
   layers:
   - Default
   - TransparentFX

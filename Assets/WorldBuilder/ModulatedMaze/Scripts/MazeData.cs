@@ -56,14 +56,14 @@ namespace Cr7_MMaze
              MazeDirection.East
         };
 
-        private static Quaternion[] rotations_Y = {
+        private static Quaternion[] rotations_Z = {
             Quaternion.Euler(-90, 90.0f, 0f),
             Quaternion.Euler(0f ,90.0f, 0f),
             Quaternion.Euler(90.0f, 90.0f, 0f),
             Quaternion.Euler(180.0f, 90.0f, 0f)
         };
 
-        private static Quaternion[] rotations_Z = {
+        private static Quaternion[] rotations_Y = {
             Quaternion.identity,
             Quaternion.Euler(0f, 90.0f, 0f),
             Quaternion.Euler(0f, 180f, 0f),
@@ -85,7 +85,12 @@ namespace Cr7_MMaze
 
         public static Quaternion ToRotation(this MazeDirection direction)
         {
-            return rotations_Y[(int)direction];
+            if (LevelManager.Instance.CurrentAxis == LevelManager.AxisType.Z_axis)
+                return rotations_Z[(int)direction];
+            else
+                return rotations_Y[(int)direction];
+
+
         }
 
         public static IntVector2 MDToIntVector2(this MazeDirection direction)
@@ -98,7 +103,7 @@ namespace Cr7_MMaze
         {
             return opposites[(int)direction];
         }
-        
+
     }
 
 }

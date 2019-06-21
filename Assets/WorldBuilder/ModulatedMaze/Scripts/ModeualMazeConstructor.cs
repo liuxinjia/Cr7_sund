@@ -18,10 +18,14 @@ namespace Cr7_MMaze
         public float ZoneSize = 1.0f;
         public MazeCell cellPrefab;
 
+        public MazeDoor doorPrefab;
+        [Range(0f, 1f)]
+        public float doorProbability;
+
         public MazePassage passagePrefab;
+        public MazeWall[] wallPrefabs;
         MazePassage EmptyPassage;
         MazeWall EmptyWall;
-        public MazeWall wallPrefab;
 
         //maze grid
 
@@ -133,7 +137,13 @@ namespace Cr7_MMaze
             var newCell = Instantiate(cellPrefab) as MazeCell;
             cells[coord.x, coord.y] = newCell;
 
-            var worldPos = new Vector3(coord.x - rMax * .5f + .5f, coord.y - cMax * .5f + .5f, 0f);
+
+            Vector3 worldPos;
+
+            if (LevelManager.Instance.CurrentAxis == LevelManager.AxisType.Z_axis)
+                worldPos = new Vector3(coord.x - rMax * .5f + .5f, coord.y - cMax * .5f + .5f, 0f);
+            else
+                worldPos = new Vector3(coord.x - rMax * .5f + .5f, 0f, coord.y - cMax * .5f + .5f);
             // var worldPos = new Vector3(coord.x + .5f, 0f, coord.z + .5f);
             worldPos *= ZoneSize;
             newCell.InitMazeCell(coord, worldPos);
@@ -141,13 +151,16 @@ namespace Cr7_MMaze
             newCell.name = "Maze Cell " + coord.x + ", " + coord.y;
             newCell.transform.parent = transform;
             newCell.transform.localPosition = worldPos;
+            newCell.transform.localScale = Vector3.one * ZoneSize;
 
             return newCell;
         }
 
         void CreatePassage(MazeCell cell, MazeCell otherCell, MazeDirection direction)
         {
-            var passage = Instantiate(passagePrefab) as MazePassage;
+            MazePassage prefab = Random.value < doorProbability && direction != MazeDirection.North && direction != MazeDirection.South ? doorPrefab : passagePrefab;
+
+            var passage = Instantiate(prefab) as MazePassage;
             passage.Initialize(cell, otherCell, direction, EdgeType.passage);
             passage = Instantiate(EmptyPassage) as MazePassage;
             passage.Initialize(otherCell, cell, direction.GetOpposite(), EdgeType.passage);
@@ -155,7 +168,7 @@ namespace Cr7_MMaze
 
         void CreateWall(MazeCell cell, MazeCell otherCell, MazeDirection direction)
         {
-            var wall = Instantiate(wallPrefab) as MazeWall;
+            var wall = Instantiate(wallPrefabs[Random.Range(0, wallPrefabs.Length)]) as MazeWall;
             wall.Initialize(cell, otherCell, direction, EdgeType.wall);
             if (otherCell != null)
             {

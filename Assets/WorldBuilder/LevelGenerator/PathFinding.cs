@@ -6,7 +6,6 @@ using System.Diagnostics;
 
 namespace Cr7_Level
 {
-
     public class PathFinding : MonoBehaviour
     {
         protected PathRequestManager pathRequestManager;
@@ -32,6 +31,16 @@ namespace Cr7_Level
 
             var startNode = grid.NodeFromWorldPoint(startPos);
             var targetNode = grid.NodeFromWorldPoint(targetPos);
+
+            if (startNode == null)
+            {
+                print(startPos);
+            }
+
+            if (targetNode == null)
+            {
+                print(targetPos);
+            }
 
             if (startNode.walkable && targetNode.walkable)
             {
