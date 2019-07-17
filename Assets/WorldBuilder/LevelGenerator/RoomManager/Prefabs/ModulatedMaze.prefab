@@ -49,7 +49,7 @@ MonoBehaviour:
   mazeWallMat: {fileID: 2100000, guid: 2063f2acbbbdab94ba166bd09d962c89, type: 2}
   reachedTriggerMat: {fileID: 2100000, guid: 73cadd559baeafe42bfa4a229795fa6d, type: 2}
   grid: {fileID: 0}
-  ZoneSize: 1
+  ZoneSize: 4
   cellPrefab: {fileID: 3405880432699733979, guid: 76714148be879944a8d69762dcab4db8,
     type: 3}
   doorPrefab: {fileID: -7729157387179512789, guid: 69d1befc5f60c2d428870fae80e86a6a,
@@ -74,5 +74,5 @@ MonoBehaviour:
   roomDoors: 0
   getToDestination: 0
   isCurrent: 0
-  gridCols: 20
-  gridRows: 20
+  gridCols: 15
+  gridRows: 15

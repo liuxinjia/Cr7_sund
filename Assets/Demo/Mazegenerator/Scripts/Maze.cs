@@ -8,7 +8,7 @@ namespace Cr7_Demo
     {
         #region  fields
         //demo display
-        public bool displayWholeMaze = false;
+        public bool displayWholeMaze = true;
 
         public IntVector2 size;
 
@@ -82,6 +82,7 @@ namespace Cr7_Demo
                 DoNextGenerationStep(activeCells);
             }
 
+            displayWholeMaze = false;
             if (!displayWholeMaze)
             {
                 foreach (var item in rooms)

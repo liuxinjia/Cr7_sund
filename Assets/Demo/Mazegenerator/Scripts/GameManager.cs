@@ -5,7 +5,6 @@ namespace Cr7_Demo
 {
     public class GameManager : MonoBehaviour
     {
-        public bool displayWholeMaze = true;
 
         public Maze mazePrefab;
 
@@ -44,7 +43,6 @@ namespace Cr7_Demo
             else
                 mazeInstance.GenerateResult();
 
-            mazeInstance.displayWholeMaze = displayWholeMaze;
             walkerInstance.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
 
 
